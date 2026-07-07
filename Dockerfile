@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1.7
 
-# ── Build stage ──────────────────────────────────────────────────────────────
-FROM cloudron/base:5.0.0@sha256:04fd70dbd8ad6149c19de39e35718e024417c3e01dc9c6637eaf4a41ec4e596c AS builder
+FROM cloudron/base:5.0.0@sha256:04fd70dbd8ad6149c19de39e35718e024417c3e01dc9c6637eaf4a41ec4e596c
 
-WORKDIR /app
+RUN mkdir -p /app/code /app/data
+WORKDIR /app/code
 
 COPY upstream/package.json ./
 RUN npm install
@@ -12,33 +12,19 @@ COPY upstream/ ./
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
-# ── Final stage ──────────────────────────────────────────────────────────────
-FROM cloudron/base:5.0.0@sha256:04fd70dbd8ad6149c19de39e35718e024417c3e01dc9c6637eaf4a41ec4e596c
-
-RUN mkdir -p /app/code /app/data
-WORKDIR /app/code
+# Remove source code and build tools, keep runtime deps
+RUN rm -rf upstream src docs tests cli .git \
+    eslint.config.mjs jsconfig.json postcss.config.mjs next.config.mjs \
+    docker-compose.yml Dockerfile captain-definition CLAUDE.md DOCKER.md LICENSE \
+    gitbook i18n
 
 ENV NODE_ENV=production
 ENV PORT=20128
 ENV HOSTNAME=0.0.0.0
-ENV NEXT_TELEMETRY_DISABLED=1
 ENV DATA_DIR=/app/data
 
-# Copy built artifacts from builder
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/custom-server.js ./custom-server.js
-COPY --from=builder /app/open-sse ./open-sse
-COPY --from=builder /app/src/mitm ./src/mitm
-
-# Standalone node_modules may omit deps required by the MITM child process
-COPY --from=builder /app/node_modules/node-forge ./node_modules/node-forge
-COPY --from=builder /app/node_modules/next ./node_modules/next
-
-# Copy startup script and manifest
-COPY start.sh ./start.sh
-COPY CloudronManifest.json ./CloudronManifest.json
+COPY start.sh ./
+COPY CloudronManifest.json ./
 RUN chmod +x start.sh
 
 EXPOSE 20128

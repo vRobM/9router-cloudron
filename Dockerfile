@@ -18,6 +18,9 @@ RUN rm -rf upstream src docs tests cli .git \
     docker-compose.yml Dockerfile captain-definition CLAUDE.md DOCKER.md LICENSE \
     gitbook i18n
 
+# Move standalone output to code root where custom-server.js expects it
+RUN cp -r .next/standalone/* . && rm -rf .next/standalone
+
 ENV NODE_ENV=production
 ENV PORT=20128
 ENV HOSTNAME=0.0.0.0

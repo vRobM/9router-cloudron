@@ -8,7 +8,7 @@
                 "tagline": "AI router and token saver for coding tools",
                 "description": "Routes requests across 40+ AI providers with RTK token saving, multi-account round-robin, MITM proxy, and a unified dashboard.",
                 "author": "robi",
-                "contactEmail": "decolua@users.noreply.github.com",
+                "contactEmail": "rob.vce@gmail.com",
                 "website": "https://github.com/decolua/9router",
                 "documentationUrl": "https://github.com/decolua/9router/blob/main/README.md",
                 "version": "0.1.0",

@@ -25,7 +25,8 @@
   },
   "postInstallMessage": "file://POSTINSTALL.md",
   "mediaLinks": [
-    "https://example.com/screenshot.png"
+    "https://raw.githubusercontent.com/decolua/9router/main/images/9router.png",
+    "https://raw.githubusercontent.com/decolua/9router/main/images/fusion-combo-ui.png"
   ],
   "iconUrl": "https://raw.githubusercontent.com/vRobM/9router-cloudron/main/icon.png",
   "changelog": "file://CHANGELOG"

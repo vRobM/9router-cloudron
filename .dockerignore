@@ -1,0 +1,14 @@
+.git
+.gitignore
+.dockerignore
+.DS_Store
+*.md
+!upstream/README.md
+LICENSE
+CloudronVersions.json
+upstream/.git
+upstream/tests
+upstream/docs
+upstream/.env.example
+upstream/CLAUDE.md
+upstream/CHANGELOG.md

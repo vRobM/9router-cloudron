@@ -16,8 +16,8 @@ const dbDir = path.join(process.env.DATA_DIR || '/app/data', 'db');
 const dbFile = path.join(dbDir, 'data.sqlite');
 if (!fs.existsSync(dbFile)) { process.exit(0); }
 try {
-  const { DatabaseSync } = require('node:sqlite');
-  const db = new DatabaseSync(dbFile, { readOnly: false });
+  const Database = require('better-sqlite3');
+  const db = new Database(dbFile);
   const row = db.prepare('SELECT data FROM settings WHERE id = 1').get();
   const settings = row ? JSON.parse(row.data) : {};
   if (!settings.mitmEnabled) {

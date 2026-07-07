@@ -21,7 +21,7 @@ RUN rm -rf upstream src docs tests cli .git \
     gitbook i18n
 
 # Move standalone output to code root where custom-server.js expects it
-RUN cp -r .next/standalone/* . && rm -rf .next
+RUN cp -r .next/standalone/* . && rm -rf .next/standalone .next/cache .next/trace
 
 ENV NODE_ENV=production
 ENV PORT=20128

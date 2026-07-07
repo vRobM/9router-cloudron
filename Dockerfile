@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # ── Build stage ──────────────────────────────────────────────────────────────
-FROM node:22-alpine AS builder
+FROM cloudron/base:5.0.0@sha256:04fd70dbd8ad6149c19de39e35718e024417c3e01dc9c6637eaf4a41ec4e596c AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY upstream/ ./
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
-# ── Final stage: Cloudron base ──────────────────────────────────────────────
+# ── Final stage ──────────────────────────────────────────────────────────────
 FROM cloudron/base:5.0.0@sha256:04fd70dbd8ad6149c19de39e35718e024417c3e01dc9c6637eaf4a41ec4e596c
 
 RUN mkdir -p /app/code /app/data

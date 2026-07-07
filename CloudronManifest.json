@@ -10,7 +10,8 @@
   "version": "0.1.0",
   "upstreamVersion": "0.5.20",
   "tags": [
-    "chat"
+    "ai",
+    "agent"
   ],
   "httpPort": 20128,
   "healthCheckPath": "/",

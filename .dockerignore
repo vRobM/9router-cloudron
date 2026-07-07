@@ -2,7 +2,7 @@
 .gitignore
 .dockerignore
 .DS_Store
-*.md
+*.md                  # not needed at build time; manifest file:// refs are resolved from source tarball by the platform
 !upstream/README.md
 LICENSE
 CloudronVersions.json

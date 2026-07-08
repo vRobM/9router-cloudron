@@ -30,10 +30,10 @@
                 },
                 "postInstallMessage": "Open https://<your-app-domain>/dashboard — default password: 123456 (change immediately).",
                 "mediaLinks": [
-                    "https://raw.githubusercontent.com/decolua/9router/main/images/9router.png",
-                    "https://raw.githubusercontent.com/decolua/9router/main/images/fusion-combo-ui.png"
+                    "https://raw.githubusercontent.com/decolua/9router/master/images/9router.png",
+                    "https://raw.githubusercontent.com/decolua/9router/master/images/fusion-combo-ui.png"
                 ],
-                "iconUrl": "https://raw.githubusercontent.com/decolua/9router/main/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/decolua/9router/master/images/9router.png",
                 "changelog": "* Initial release\n",
                 "dockerImage": "registry.toldyouso.com/toldyouso/9router:0.1.0"
             },

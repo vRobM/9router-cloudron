@@ -26,9 +26,9 @@
   },
   "postInstallMessage": "file://POSTINSTALL.md",
   "mediaLinks": [
-    "https://raw.githubusercontent.com/decolua/9router/main/images/9router.png",
-    "https://raw.githubusercontent.com/decolua/9router/main/images/fusion-combo-ui.png"
+    "https://raw.githubusercontent.com/decolua/9router/master/images/9router.png",
+    "https://raw.githubusercontent.com/decolua/9router/master/images/fusion-combo-ui.png"
   ],
-  "iconUrl": "https://raw.githubusercontent.com/decolua/9router/main/icon.png",
+  "iconUrl": "https://raw.githubusercontent.com/decolua/9router/master/images/9router.png",
   "changelog": "file://CHANGELOG"
 }

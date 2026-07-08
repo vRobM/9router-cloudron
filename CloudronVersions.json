@@ -35,7 +35,7 @@
                 ],
                 "iconUrl": "https://raw.githubusercontent.com/decolua/9router/master/images/9router.png",
                 "changelog": "* Initial release\n",
-                "dockerImage": "registry.toldyouso.com/toldyouso/9router:0.1.0"
+                "dockerImage": "docker.io/robius/9router:0.1.0"
             },
             "creationDate": "Tue, 07 Jul 2026 18:49:16 GMT",
             "ts": "Tue, 07 Jul 2026 18:49:16 GMT",

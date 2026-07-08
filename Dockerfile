@@ -27,6 +27,7 @@ ENV NODE_ENV=production
 ENV PORT=20128
 ENV HOSTNAME=0.0.0.0
 ENV DATA_DIR=/app/data
+ENV MITM_PORT=8443
 
 COPY start.sh ./
 COPY CloudronManifest.json ./

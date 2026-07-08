@@ -7,7 +7,7 @@
   "contactEmail": "vrobm@users.noreply.github.com",
   "website": "https://github.com/decolua/9router",
   "documentationUrl": "https://github.com/decolua/9router/blob/master/README.md",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "upstreamVersion": "0.5.20",
   "tags": [
     "ai",
@@ -22,7 +22,12 @@
   "packagerName": "Robi",
   "packagerUrl": "https://github.com/vRobM",
   "addons": {
-    "localstorage": {}
+    "localstorage": {},
+    "oidc": {
+      "loginRedirectUri": "/api/auth/oidc/callback",
+      "logoutRedirectUri": "/",
+      "tokenSignatureAlgorithm": "RS256"
+    }
   },
   "postInstallMessage": "file://POSTINSTALL.md",
   "mediaLinks": [
